@@ -1,11 +1,11 @@
 default: &default
   adapter: mysql2
-  encoding: utf8
   database: playbook_basketball_<%= Rails.env %>
   pool: 5
   username: root
   password:
   host: localhost
+  port: 3306
   encoding: utf8mb4
 
 development:
