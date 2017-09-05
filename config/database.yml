@@ -1,4 +1,4 @@
-default:
+default: &default
   adapter: mysql2
   encoding: utf8
   database: playbook_basketball_<%= Rails.env %>
@@ -9,15 +9,15 @@ default:
   encoding: utf8mb4
 
 development:
-  <<: &default
+  <<: *default
   socket: /tmp/mysql.sock
 
 test:
-  <<: &default
+  <<: *default
   socket: /tmp/mysql.sock
 
 production:
-  <<: &default
+  <<: *default
   database: <%= ENV['RDS_DB_NAME'] %>
   username: <%= ENV['RDS_USERNAME'] %>
   password: <%= ENV['RDS_PASSWORD'] %>
