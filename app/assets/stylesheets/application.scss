@@ -15,3 +15,7 @@
  */
 
 @import "bulma";
+
+section.hero.is-medium.is-bold.top {
+  background: image-url("top/top-background.jpg");
+}
