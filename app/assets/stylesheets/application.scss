@@ -16,6 +16,19 @@
 
 @import "bulma";
 
-section.hero.is-medium.is-bold.top {
-  background: image-url("top/top-background.jpg");
+.top {
+  section.hero.is-medium.is-bold {
+    background-image: image-url("top/top-background.jpg");
+    background-size: cover;
+
+    .hero-body {
+      h1.title {
+        color: white;
+      }
+
+      h2.subtitle {
+        color: white;
+      }
+    }
+  }
 }
