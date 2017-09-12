@@ -48,4 +48,12 @@
       }
     }
   }
+
+  @media(max-width:374px) {
+    .hero-body {
+      h1.title {
+        font-size: 1.8rem;
+      }
+    }
+  }
 }
