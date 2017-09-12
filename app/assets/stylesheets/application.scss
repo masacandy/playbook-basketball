@@ -17,9 +17,26 @@
 @import "bulma";
 
 .top {
-  section.hero.is-medium.is-bold {
+  section.hero.is-medium.is-bold.top-image {
     background-image: image-url("top/top-background.jpg");
     background-size: cover;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+
+    .hero-body {
+      h1.title {
+        color: white;
+      }
+
+      h2.subtitle {
+        color: white;
+      }
+    }
+  }
+
+  section.hero.is-bold.link-to-lp {
+    background-image: image-url("top/link-to-lp.jpg");
+    background-size: cover;
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 
     .hero-body {
       h1.title {
