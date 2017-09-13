@@ -1,7 +1,4 @@
-.container
-  nav.navbar
-    .navbar-brand
-      = link_to 'PlayBook', root_path, class: 'navbar-item'
+= render 'web/shared/header'
 
 .top
   section.hero.is-medium.is-bold.top-image
@@ -17,81 +14,23 @@
     .container
       h1.title 新着レッスン
 
-      <!-- TODO レッスンへのリンク -->
       hr
 
-      article.media
-        figure.media-left
-          p.image.is-64x64
-            img(src="http://bulma.io/images/placeholders/128x128.png")
-        .media-content
-          .content
-            p
-              strong ディフェンスフットワーク入門
-              br
-              small 山内コーチ
-              br
-              |基礎的ディフェンスのステップの解説です。普段何気なく行なってるステップ、正しいフォームを知っていますか？
+      - @cources.each do |cource|
+        = link_to cource_lesson_path(cource_id: cource.id, id: cource.lessons.first.id) do
+          article.media
+            figure.media-left
+              p.image.is-64x64
+                img(src="http://bulma.io/images/placeholders/128x128.png")
+            .media-content
+              .content
+                p
+                  strong
+                    = cource.title
+                  br
+                    = cource.description
 
-      hr
-
-      article.media
-        figure.media-left
-          p.image.is-64x64
-            img(src="http://bulma.io/images/placeholders/128x128.png")
-        .media-content
-          .content
-            p
-              strong ディフェンスフットワーク入門
-              br
-              small 山内コーチ
-              br
-              |基礎的ディフェンスのステップの解説です。普段何気なく行なってるステップ、正しいフォームを知っていますか？
-
-      hr
-
-      article.media
-        figure.media-left
-          p.image.is-64x64
-            img(src="http://bulma.io/images/placeholders/128x128.png")
-        .media-content
-          .content
-            p
-              strong ディフェンスフットワーク入門
-              br
-              small 山内コーチ
-              br
-              |基礎的ディフェンスのステップの解説です。普段何気なく行なってるステップ、正しいフォームを知っていますか？
-
-      hr
-
-      article.media
-        figure.media-left
-          p.image.is-64x64
-            img(src="http://bulma.io/images/placeholders/128x128.png")
-        .media-content
-          .content
-            p
-              strong ディフェンスフットワーク入門
-              br
-              small 山内コーチ
-              br
-              |基礎的ディフェンスのステップの解説です。普段何気なく行なってるステップ、正しいフォームを知っていますか？
-
-      hr
-
-      article.media
-        figure.media-left
-          p.image.is-64x64
-            img(src="http://bulma.io/images/placeholders/128x128.png")
-        .media-content
-          .content
-            p
-              strong ディフェンスフットワーク入門
-              br
-              small 山内コーチ
-              br
-              |基礎的ディフェンスのステップの解説です。普段何気なく行なってるステップ、正しいフォームを知っていますか？
+        hr
 
   section.hero.is-bold.link-to-lp
     .hero-body
@@ -104,16 +43,4 @@
           br
           | オンラインレッスンサイト
 
-footer.footer
-  .container
-    .content.has-text-centered
-      p
-        strong PlayBookBasketball
-      p
-        |by PlayBook Inc, all right reserved.
-      <!-- TODO SNS アカウント -->
-      <p>
-        <a class="icon" href="https://github.com/jgthms/bulma">
-          <i class="fa fa-github"></i>
-        </a>
-      </p>
+= render 'web/shared/footer'

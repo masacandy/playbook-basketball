@@ -1,0 +1,27 @@
+= render 'web/shared/header'
+
+.show-cource
+  section.section
+    .container
+      h1.title
+        = @cource.title
+
+      .video
+        iframe(src="//player.vimeo.com/video/233672093" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen)
+
+
+      p
+        = simple_format(h(@cource.description))
+
+      hr
+
+      - @cource.lessons.each do |lesson|
+        article.media
+          .media-content
+            .content
+              p
+                strong
+                  = link_to lesson.title, cource_lesson_path(cource_id: @cource.id, id: lesson.id)
+        hr
+
+= render 'web/shared/footer'
