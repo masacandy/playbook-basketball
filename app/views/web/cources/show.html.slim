@@ -6,7 +6,12 @@
       h1.title
         = @cource.title
 
-      <!-- TODO 動画 -->
+      .video
+        iframe(src="//player.vimeo.com/video/233672093" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen)
+
+
+      p
+        = simple_format(h(@cource.description))
 
       hr
 

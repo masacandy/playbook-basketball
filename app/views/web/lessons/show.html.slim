@@ -6,8 +6,8 @@
       h1.title
         = @lesson.title
 
-      <!-- TODO 動画 -->
-
+      .video
+        iframe(src="//player.vimeo.com/video/233672093" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen)
       .is-pulled-left
         - if @cource.lessons.order(sort: :asc).first.id == @lesson.id
           a.button.is-primary(disabled) 前の動画
