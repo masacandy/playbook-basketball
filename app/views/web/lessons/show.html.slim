@@ -1,0 +1,53 @@
+= render 'web/shared/header'
+
+.show-lesson
+  section.section
+    .container
+      h1.title
+        = @lesson.title
+
+      <!-- TODO 動画 -->
+
+      .is-pulled-left
+        - if @cource.lessons.order(sort: :asc).first.id == @lesson.id
+          a.button.is-primary(disabled) 前の動画
+        - else
+          - pre_lesson_id = @cource.lessons.find_by(sort: @lesson.sort - 1).id
+          = link_to '前の動画', cource_lesson_path(cource_id: @cource.id, id: pre_lesson_id), class: 'button is-primary'
+      .is-pulled-right
+        - if @cource.lessons.order(sort: :asc).last.id == @lesson.id
+          a.button.is-primary(disabled) 次の動画
+        - else
+          - after_lesson_id = @cource.lessons.find_by(sort: @lesson.sort + 1).id
+          = link_to '次の動画', cource_lesson_path(cource_id: @cource.id, id: after_lesson_id), class: 'button is-primary'
+      .is-clearfix
+
+      hr
+
+      p
+        = simple_format(h(@lesson.description))
+
+  hr
+
+  section.section
+    .container
+      h2.title.is-5
+        = @lesson.cource.title
+        br
+        |レッスン一覧
+
+      hr
+
+      - @cource.lessons.each do |lesson|
+        article.media
+          .media-content
+            .content
+              p
+                strong
+                  = link_to lesson.title, cource_lesson_path(cource_id: @cource.id, id: lesson.id)
+        hr
+
+      .has-text-centered
+        = link_to 'レッスン一覧へ', cource_path(@cource.id)
+
+= render 'web/shared/footer'

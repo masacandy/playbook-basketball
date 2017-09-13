@@ -26,12 +26,13 @@ ActiveRecord::Schema.define(version: 20170913110540) do
   create_table "lessons", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.integer "cource_id", null: false
     t.string "title", null: false
-    t.string "description", null: false
+    t.text "description", null: false
     t.integer "sort", default: 0, null: false
     t.boolean "active", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cource_id", "active"], name: "index_lessons_on_cource_id_and_active"
+    t.index ["sort"], name: "index_lessons_on_sort"
   end
 
 end
