@@ -3,6 +3,8 @@
 .show-lesson
   section.section
     .container
+      h2.subtitle
+        = @cource.title
       h1.title
         = @lesson.title
 
@@ -10,29 +12,33 @@
         iframe(src="//player.vimeo.com/video/233672093" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen)
       .is-pulled-left
         - if @cource.lessons.order(sort: :asc).first.id == @lesson.id
-          a.button.is-primary(disabled) 前の動画
+          a.button.is-basketball(disabled) 前の動画
         - else
           - pre_lesson_id = @cource.lessons.find_by(sort: @lesson.sort - 1).id
-          = link_to '前の動画', cource_lesson_path(cource_id: @cource.id, id: pre_lesson_id), class: 'button is-primary'
+          = link_to '前の動画', cource_lesson_path(cource_id: @cource.id, id: pre_lesson_id), class: 'button is-basketball'
       .is-pulled-right
         - if @cource.lessons.order(sort: :asc).last.id == @lesson.id
-          a.button.is-primary(disabled) 次の動画
+          a.button.is-basketball(disabled) 次の動画
         - else
           - after_lesson_id = @cource.lessons.find_by(sort: @lesson.sort + 1).id
-          = link_to '次の動画', cource_lesson_path(cource_id: @cource.id, id: after_lesson_id), class: 'button is-primary'
+          = link_to '次の動画', cource_lesson_path(cource_id: @cource.id, id: after_lesson_id), class: 'button is-basketball'
       .is-clearfix
 
       hr
 
-      p
-        = simple_format(h(@lesson.description))
+      article.message
+        .message-header
+          p
+            |このレッスンのポイント
+        .message-body
+          = simple_format(h(@lesson.description))
 
   hr
 
   section.section
     .container
       h2.title.is-5
-        = @lesson.cource.title
+        = "#{@lesson.cource.title}コース"
         br
         |レッスン一覧
 

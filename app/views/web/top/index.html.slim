@@ -1,18 +1,19 @@
 = render 'web/shared/header'
 
 .top
-  section.hero.is-medium.is-bold.top-image
+  section.hero.top-image
     .hero-body
       .container.has-text-centered
-        h1.title
-          | PlayBookBasketball
-        h2.subtitle
-          | 動画で学ぶバスケットボール
+        = image_tag('top/top.png')
 
+        h1.subtitle.is-4
+          | 1分動画でマスターする
+          br
+          | バスケットボールレッスンサイト
 
   section.section
     .container
-      h1.title 新着レッスン
+      h1.title 新着コース
 
       hr
 
