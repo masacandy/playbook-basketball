@@ -9,22 +9,21 @@
         = @lesson.title
 
       .video
-        iframe(src="//player.vimeo.com/video/233672093" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen)
-      .is-pulled-left
-        - if @cource.lessons.order(sort: :asc).first.id == @lesson.id
-          a.button.is-basketball(disabled) 前の動画
-        - else
-          - pre_lesson_id = @cource.lessons.find_by(sort: @lesson.sort - 1).id
-          = link_to '前の動画', cource_lesson_path(cource_id: @cource.id, id: pre_lesson_id), class: 'button is-basketball'
-      .is-pulled-right
-        - if @cource.lessons.order(sort: :asc).last.id == @lesson.id
-          a.button.is-basketball(disabled) 次の動画
-        - else
-          - after_lesson_id = @cource.lessons.find_by(sort: @lesson.sort + 1).id
-          = link_to '次の動画', cource_lesson_path(cource_id: @cource.id, id: after_lesson_id), class: 'button is-basketball'
-      .is-clearfix
-
-      hr
+        iframe(src="//player.vimeo.com/video/#{@lesson.vimeo_id}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen)
+      .lesson-buttons
+        .is-pulled-left
+          - if @cource.lessons.order(sort: :asc).first.id == @lesson.id
+            a.button.is-basketball(disabled) 前の動画
+          - else
+            - pre_lesson_id = @cource.lessons.find_by(sort: @lesson.sort - 1).id
+            = link_to '前の動画', cource_lesson_path(cource_id: @cource.id, id: pre_lesson_id), class: 'button is-basketball'
+        .is-pulled-right
+          - if @cource.lessons.order(sort: :asc).last.id == @lesson.id
+            a.button.is-basketball(disabled) 次の動画
+          - else
+            - after_lesson_id = @cource.lessons.find_by(sort: @lesson.sort + 1).id
+            = link_to '次の動画', cource_lesson_path(cource_id: @cource.id, id: after_lesson_id), class: 'button is-basketball'
+        .is-clearfix
 
       article.message
         .message-header

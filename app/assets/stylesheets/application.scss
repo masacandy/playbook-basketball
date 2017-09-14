@@ -40,6 +40,20 @@ a.button.is-basketball:focus {
   border-color: $basketball-color;
 }
 
+.video {
+  position: relative;
+  height: 0;
+  padding: 30px 0 56.25%;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+.video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 .top {
   section.hero.top-image {
     border-bottom: 1px solid #dbdbdb;
@@ -80,17 +94,9 @@ a.button.is-basketball:focus {
   }
 }
 
-.video {
-  position: relative;
-  height: 0;
-  padding: 30px 0 56.25%;
-  overflow: hidden;
-  margin-bottom: 1.5rem;
-}
-.video iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+// show-lesson
+.show-lesson {
+  .lesson-buttons {
+    margin-bottom: 1.5rem;
+  }
 }
