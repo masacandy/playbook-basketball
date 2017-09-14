@@ -15,26 +15,59 @@
  */
 
 @import "bulma";
+//@import "font-awesome";
 
+$basketball-color: #ED6826;
+
+a {
+  color: $basketball-color;
+}
+
+a.button.is-basketball {
+  background-color: $basketball-color;
+  color: white;
+}
+
+a.button.is-basketball:hover {
+  background-color: #DD5715;
+  color: white;
+}
+
+a.button.is-basketball:active {
+  border-color: white;
+}
+
+a.button.is-basketball:focus {
+  border-color: $basketball-color;
+}
+
+.video {
+  position: relative;
+  height: 0;
+  padding: 30px 0 56.25%;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+.video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 .top {
-  section.hero.is-medium.is-bold.top-image {
-    background-image: image-url("top/top-background.jpg");
-    background-size: cover;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+  section.hero.top-image {
+    border-bottom: 1px solid #dbdbdb;
 
     .hero-body {
-      h1.title {
-        color: white;
-      }
-
-      h2.subtitle {
-        color: white;
+      img {
+        max-width: 350px;
       }
     }
   }
 
   section.hero.is-bold.link-to-lp {
-    background-image: image-url("top/link-to-lp.jpg");
+    background-image: image-url("top/explanation.jpg");
     background-size: cover;
         text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 
@@ -54,21 +87,50 @@
       h1.title {
         font-size: 1.8rem;
       }
+
+      img {
+        max-width: 100%;
+      }
     }
   }
 }
 
-.video {
-  position: relative;
-  height: 0;
-  padding: 30px 0 56.25%;
-  overflow: hidden;
-  margin-bottom: 1.5rem;
+// show-lesson
+.show-lesson {
+  .lesson-buttons {
+    margin-bottom: 1.5rem;
+  }
 }
-.video iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+
+//footer
+
+footer.footer {
+  padding-bottom: 1.5rem;
+
+  img {
+    max-width: 200px;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      p.title {
+        font-size: 1rem;
+        font-weight: bold;
+      }
+
+      a {
+        color: black;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .copy-right {
+    font-size: 0.9rem;
+  }
 }

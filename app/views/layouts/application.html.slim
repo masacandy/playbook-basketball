@@ -2,10 +2,19 @@ doctype html
 html
   head
     meta charset="utf-8"
-    meta name="viewport" content="width=device-width, initial-scale=1"
     title
-      | PlaybookBasketball
+      | Playbook - 1分動画で学ぶバスケットボール -
+    link rel="canonical" href="http://playbook-basketball.com"
+    link rel="index" href="/"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    meta property="og:title" content="PlayBook"
+    meta property="og:type" content="website"
+    meta property="og:url" content="http://playbook-basketball.com/"
+    meta property="og:description" content="1分動画でマスターするバスケットボールオンラインレッスンサイトです。プロの専門家による質の高いレッスン動画を見ることができます。"
+    meta property="og:image" content="<%= image_tag('top/top.png') %>"
+    meta property="og:locale" content="ja_JP"
 
+    = favicon_link_tag
     = csrf_meta_tags
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -14,3 +23,5 @@ html
 
   body
     = yield
+
+    /! Basketball Court graphic by <a href="https://thenounproject.com/smashicons">tnp_smashicons</a> from <a href="https://thenounproject.com/">TheNounProject</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>. Check out the new logo that I created on <a href="http://logomakr.com" title="Logo Maker">LogoMaker.com</a> https://logomakr.com/8ny1Fg8ny1Fg

@@ -6,5 +6,8 @@ Rails.application.routes.draw do
     resources :cources, only: %i(show) do
       resources :lessons, only: %i(show)
     end
+
+    get '/privacy_policy', to: 'privacy_policies#index'
+    get '/service_policy', to: 'service_policies#index'
   end
 end
