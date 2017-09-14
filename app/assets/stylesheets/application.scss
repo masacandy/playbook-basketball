@@ -15,6 +15,7 @@
  */
 
 @import "bulma";
+//@import "font-awesome";
 
 $basketball-color: #ED6826;
 
@@ -98,5 +99,38 @@ a.button.is-basketball:focus {
 .show-lesson {
   .lesson-buttons {
     margin-bottom: 1.5rem;
+  }
+}
+
+//footer
+
+footer.footer {
+  padding-bottom: 1.5rem;
+
+  img {
+    max-width: 200px;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      p.title {
+        font-size: 1rem;
+        font-weight: bold;
+      }
+
+      a {
+        color: black;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .copy-right {
+    font-size: 0.9rem;
   }
 }

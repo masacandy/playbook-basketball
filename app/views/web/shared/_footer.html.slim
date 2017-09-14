@@ -1,13 +1,21 @@
 footer.footer
-  .container
-    .content.has-text-centered
-      p
-        strong PlayBookBasketball
-      p
-        |by PlayBook Inc, all right reserved.
-      <!-- TODO SNS アカウント -->
-      <p>
-        <a class="icon" href="https://github.com/jgthms/bulma">
-          <i class="fa fa-github"></i>
-        </a>
-      </p>
+  .container.content.has-text-centered
+    .columns
+      .column
+        = image_tag('top/top.png')
+      .column
+        ul
+          li
+            p.title PlayBookについて
+          li
+            = link_to 'PlayBookとは'
+          li
+            = link_to '利用規約', service_policy_path
+          li
+            = link_to 'プリバシーポリシー', privacy_policy_path
+      .column
+
+  hr
+  .copy-right.has-text-centered
+    p
+      | Copyright© PlayBook inc. All Rights Reserved.
