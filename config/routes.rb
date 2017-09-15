@@ -7,7 +7,8 @@ Rails.application.routes.draw do
       resources :lessons, only: %i(show)
     end
 
-    get '/privacy_policy', to: 'privacy_policies#index'
-    get '/service_policy', to: 'service_policies#index'
+    resources :about, only: %i(index)
+    resources :privacy_policy, only: %i(index)
+    resources :service_policy, only: %i(index)
   end
 end
