@@ -15,7 +15,7 @@
  */
 
 @import "bulma";
-//@import "font-awesome";
+@import "font-awesome";
 
 $basketball-color: #ED6826;
 
@@ -116,6 +116,7 @@ footer.footer {
   ul {
     list-style: none;
     margin-right: 2rem;
+    margin-top: 0;
 
     li {
       p.title {

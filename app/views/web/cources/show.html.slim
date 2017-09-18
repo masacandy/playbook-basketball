@@ -3,18 +3,25 @@
 .show-cource
   section.section
     .container
-      h1.title
+      h1.title.is-4
         = @cource.title
 
       .video
         iframe(src="//player.vimeo.com/video/#{@cource.vimeo_id}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen)
 
+      article.message
+        .message-header
+          p
+            = "#{@cource.title}コースの説明"
+        .message-body
+          = simple_format(h(@cource.description))
 
-      p
-        = simple_format(h(@cource.description))
+      h2.title.is-5
+        = "#{@cource.title}コース"
+        br
+        |レッスン一覧
 
       hr
-
       - @cource.lessons.each do |lesson|
         article.media
           .media-content
