@@ -2,3 +2,17 @@ nav.navbar.has-shadow
   .container
     .navbar-brand
       = link_to image_tag('logos/header.png'), root_path, class: 'navbar-item'
+
+      = link_to 'PlayBookとは', about_index_path, class: 'navbar-item'
+
+    .navbar-menu
+      .navbar-end
+        .navbar-item
+          = link_to 'https://www.instagram.com/playbook_official/', class: 'social-icon', target: :_blank do
+            span.icon
+              i.fa.fa-instagram
+        .navbar-item
+          = link_to 'https://www.facebook.com/playbookbasketball', class: 'social-icon', target: :_blank do
+            span.icon
+              i.fa.fa-facebook
+
