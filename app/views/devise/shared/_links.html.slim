@@ -1,0 +1,16 @@
+- if controller_name != 'sessions'
+  = link_to "ログイン", new_user_session_path(resource_name)
+  br
+- if devise_mapping.registerable? && controller_name != 'registrations'
+  = link_to "新規登録", new_user_registration_path(resource_name)
+  br
+- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+  = link_to "パスワードをお忘れの場合", new_user_password_path(resource_name)
+  br
+- if devise_mapping.confirmable? && controller_name != 'confirmations'
+  = link_to "メールアドレスは確認済みですか？", new_user_confirmation_path(resource_name)
+  br
+- if devise_mapping.omniauthable?
+  - resource_class.omniauth_providers.each do |provider|
+    = link_to "#{OmniAuth::Utils.camelize(provider)}でログイン", omniauth_authorize_path(resource_name, provider)
+    br
